@@ -94,6 +94,11 @@ Now if you'll run `$ npm run codegen` you should see that a new file `types/grap
 
 {{{ diffStep 6.1 module="server" files=".gitignore" }}}
 
+Now to make sure we always get the updated types, let's add a task that would run automatically before we start the server.
+`prestart` is a saved word that means that when we run `yarn start` it will run that task automatically before running the script in `start`:
+
+{{{ diffStep 6.1 module="server" files="package.json" }}}
+
 Now we can import the `IResolvers` type from the file we've just created and use it in the `resolvers.ts` file to ensure our resolvers handlers have the right signature:
 
 {{{ diffStep 6.2 module="server" }}}

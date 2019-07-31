@@ -39,6 +39,8 @@ Let's first download a new image that will help us achieve the new style and sav
 
 {{{ diffStep 11.1 module="client" files="src/components" }}}
 
+{{{ diffStep 11.1 module="client" files="message.fragment.ts" }}}
+
 This is how the updated `ChatRoomScreen` should look like:
 
 
@@ -126,12 +128,11 @@ We will use this function to wrap the right components in our app’s router. No
 
 Assuming that you’re not logged-in, if you’ll try to force navigate to the `/chats` route you should be automatically redirected to the `/sign-in` form. We will finish the chapter here as we wanna keep things simple and gradual. It’s true that we haven’t implemented true authentication, but that would be addressed soon further in this tutorial.
 
----------
+{{#noop}}
+  TODO: minor change, which might be helpful for people in long term. That’s a small but powerful thing to know about in TypeScript
+  + recipient: chat.participants.find(p => p !== currentUser.id)!
+  - recipient: chat.participants.find(p => p !== currentUser.id) as string
 
-TODO: minor change, which might be helpful for people in long term. That’s a small but powerful thing to know about in TypeScript
-+ recipient: chat.participants.find(p => p !== currentUser.id)!
-- recipient: chat.participants.find(p => p !== currentUser.id) as string
-
-
-TODO: I don’t think we need `if (props.history.location.pathname === '/sign-in') return null`
-since withAuth HOC is not used on `AuthScreen` component
+  TODO: I don’t think we need `if (props.history.location.pathname === '/sign-in') return null`
+  since withAuth HOC is not used on `AuthScreen` component
+{{/noop}}

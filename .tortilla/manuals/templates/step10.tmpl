@@ -92,7 +92,7 @@ The WS url can be composed by simply running a regular expression over the `REAC
 
 Our subscription listeners should live globally across our application and shouldn't be bound to a specific component, thus we will create an external service which will be responsible of doing so. Using that service, we will update our GraphQL data-store any time a new message has been added. We will define a `messageAdded` subscription in a dedicated file under the `src/graphql/subscriptions` dir where all our subscriptions will be defined and exported:
 
-TODO: - but they are anyway. It’s just a standalone function that is used in a component. Which makes no difference.
+[comment]: # (but they are anyway. It’s just a standalone function that is used in a component. Which makes no difference.)
 
 {{{ diffStep 10.2 module="client" }}}
 
